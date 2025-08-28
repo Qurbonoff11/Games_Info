@@ -1,9 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import SliderCard from "../components/SliderCard";
-import db from "../data/db";
+import SliderCard from "../components/SliderCard.jsx";
+import data from "../data/db.js";
 
-const Home = () => {
+const { db } = data;
+
+const Store = () => {
   return (
     <section className="w-full h-full bg-slate-950">
       <div className="container mx-auto">
@@ -39,4 +41,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Store;

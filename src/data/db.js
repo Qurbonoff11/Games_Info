@@ -161,4 +161,22 @@ const db = [
   },
 ];
 
-export default db;
+const navLinks = [
+  {
+    id: 1,
+    title: "Store",
+    path: "/",
+  },
+  {
+    id: 2,
+    title: "Library",
+    path: "/libs",
+  },
+  {
+    id: 3,
+    title: "Community",
+    path: "/community",
+  },
+];
+
+export default { db, navLinks };
