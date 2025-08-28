@@ -4,29 +4,30 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Home = () => {
   const db = [
     {
-      id: 1342,
-      img: "https://i.ytimg.com/vi/__2bjWbetsA/maxresdefault.jpg",
-      title: "Venom 2",
-      year: 1994,
+      id: 1,
+      img: "https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2014/11/gtav-featured.jpg",
+      title: "Grand Theft Auto V",
+      year: 2013,
+      storage: 120,
     },
     {
-      id: 1342,
-      img: "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5359769168001/86716f5c-6ebe-4af0-b5ae-e10cf134661b/c4d99e28-7a24-40ff-94e3-e262cca34195/1280x720/match/image.jpg",
-      title: "Spider-Man 2",
-      year: 1994,
+      id: 2,
+      img: "https://gaming-cdn.com/images/products/13664/orig/counter-strike-2-pc-game-steam-cover.jpg?v=1695885435",
+      title: "Counter Strike 2",
+      year: 2023,
     },
     {
-      id: 1342,
-      img: "https://i.ytimg.com/vi/bN7ksFEVO9U/maxresdefault.jpg",
-      title: "Lucy",
-      year: 1994,
+      id: 3,
+      img: "https://toping.uz/storage/articles/6597/vbCTlDgiLfaOXFKRwqyhrboLs32Sj4o8.webp",
+      title: "DOTA 2",
+      year: 2022,
     },
   ];
 
   return (
     <section className="w-full h-full bg-slate-950">
       <div className="container mx-auto">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center py-8">
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -38,11 +39,18 @@ const Home = () => {
               clickable: true,
             }}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper w-full h-[50rem] rounded-2xl my-8"
+            className="mySwiper w-2/4 rounded-2xl"
           >
             {db.map((movie) => (
-              <SwiperSlide key={movie.id} className="w-full h-full bg-slate-800 flex justify-center items-center">
-                
+              <SwiperSlide
+                key={movie.id}
+                className="w-full h-full bg-slate-800 overflow-hidden rounded-2xl"
+              >
+                <img
+                  src={movie.img}
+                  alt={movie.title}
+                  className="w-full h-full object-cover"
+                />
               </SwiperSlide>
             ))}
           </Swiper>

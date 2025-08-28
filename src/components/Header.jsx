@@ -26,7 +26,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full bg-slate-900 fixed top-0">
+    <header className="w-full bg-slate-900 fixed top-0 z-[1000]">
       <nav className="container mx-auto flex items-center justify-between py-2">
         <Logo />
         <ul className="flex items-center gap-4">
