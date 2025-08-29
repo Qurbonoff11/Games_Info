@@ -4,7 +4,7 @@ const db = [
     img: "https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2014/11/gtav-featured.jpg",
     title: "Grand Theft Auto V",
     year: 2013,
-    price: 19.99,
+    price: 19.79,
     calabrites: true,
   },
   {

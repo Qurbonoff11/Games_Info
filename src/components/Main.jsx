@@ -5,11 +5,11 @@ import Community from "../routes/Community";
 
 const Main = () => {
   return (
-    <main className="w-full min-h-screen bg-slate-950 mt-12">
+    <main className="w-full min-h-screen bg-slate-950 py-28">
       <Routes>
         <Route path="/" element={<Store />} />
         <Route path="/libs" element={<Libs />} />
-        <Route path="/contact" element={<Community />} />
+        <Route path="/community" element={<Community />} />
       </Routes>
     </main>
   );
