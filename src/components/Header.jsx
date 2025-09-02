@@ -32,7 +32,7 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-4">
           <button className="text-2xl text-white cursor-pointer duration-300 hover:text-blue-400">
-            <RiAccountCircleLine/>
+            <RiAccountCircleLine />
           </button>
         </div>
       </nav>

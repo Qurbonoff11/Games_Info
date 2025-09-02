@@ -1,3 +1,5 @@
+import { MdDescription } from "react-icons/md";
+
 const db = [
   {
     id: 1,
@@ -6,6 +8,7 @@ const db = [
     year: 2013,
     price: 19.79,
     calabrites: true,
+    description: "Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the first installment in the Grand Theft Auto series since 2008's Grand Theft Auto IV.",
   },
   {
     id: 2,
@@ -14,6 +17,7 @@ const db = [
     year: 2023,
     price: "Free",
     calabrites: true,
+    description: "Counter-Strike 2 is a first-person shooter video game developed and published by Valve. It is the sequel to Counter-Strike and the second installment in the Counter-Strike series.",
   },
   {
     id: 3,
@@ -22,6 +26,7 @@ const db = [
     year: 2022,
     price: "Free",
     calabrites: true,
+    description: "DOTA 2 is a multiplayer online battle arena video game developed and published by Valve. It is the sequel to Dota and the second installment in the Dota series.",
   },
   {
     id: 4,
@@ -30,6 +35,7 @@ const db = [
     year: 2025,
     price: "Free",
     calabrites: false,
+    description: "Delta Force is a first-person shooter video game developed and published by Ubisoft. It is the sequel to Delta Force: Black Hawk Down and the second installment in the Delta Force series.",
   },
   {
     id: 5,
@@ -38,6 +44,7 @@ const db = [
     year: 2020,
     price: "Free",
     calabrites: true,
+    description: "Fortnite is a sandbox video game developed and published by Epic Games. It is the first installment in the Fortnite series.",
   },
   {
     id: 6,
@@ -46,6 +53,7 @@ const db = [
     year: 2023,
     price: 6.29,
     calabrites: false,
+    description: "Backrooms: Escape Together is a co-op adventure game developed and published by Steam. It is the sequel to Backrooms and the second installment in the Backrooms series.",
   },
   {
     id: 7,
@@ -54,6 +62,7 @@ const db = [
     year: 2023,
     price: "Free",
     calabrites: true,
+    description: "Stumble Guys is a puzzle game developed and published by Stumble Guys. It is the first installment in the Stumble Guys series.",
   },
   {
     id: 8,
@@ -62,6 +71,7 @@ const db = [
     year: 2011,
     price: 9.89,
     calabrites: false,
+    description: "Karting Superstars is a kart racing game developed and published by Ubisoft. It is the first installment in the Karting Superstars series.",
   },
   {
     id: 9,
@@ -70,6 +80,7 @@ const db = [
     year: 2023,
     price: 19.99,
     calabrites: true,
+    description: "CarX Street is a racing game developed and published by Ubisoft. It is the first installment in the CarX Street series.",
   },
   {
     id: 10,
@@ -78,6 +89,7 @@ const db = [
     year: 2023,
     price: 34.78,
     calabrites: true,
+    description: "Forza Horizon 5 is a racing game developed and published by Playground Games. It is the first installment in the Forza Horizon series.",
   },
   {
     id: 11,
@@ -86,6 +98,7 @@ const db = [
     year: 2023,
     price: 12.49,
     calabrites: true,
+    description: "BeamNG.drive is a racing game developed and published by BeamNG. It is the first installment in the BeamNG series.",
   },
   {
     id: 12,
@@ -94,6 +107,7 @@ const db = [
     year: 2023,
     price: 24.99,
     calabrites: false,
+    description: "SnowRunner is a racing game developed and published by Epic Games. It is the first installment in the SnowRunner series.",
   },
   {
     id: 13,
@@ -102,6 +116,7 @@ const db = [
     year: 2023,
     price: "Free",
     calabrites: false,
+    description: "The Sims 4 is a simulation game developed and published by Electronic Arts. It is the first installment in the The Sims series.",
   },
   {
     id: 14,
@@ -110,6 +125,7 @@ const db = [
     year: 2023,
     price: "Free",
     calabrites: false,
+    description: "War Thunder is a simulation game developed and published by Gaijin Games. It is the first installment in the War Thunder series.",
   },
   {
     id: 15,
@@ -118,6 +134,7 @@ const db = [
     year: 2023,
     price: 69.99,
     calabrites: true,
+    description: "EA SPORTS FC is a simulation game developed and published by Electronic Arts. It is the first installment in the EA SPORTS FC series.",
   },
   {
     id: 16,
@@ -126,6 +143,7 @@ const db = [
     year: 2023,
     price: 2.74,
     calabrites: true,
+    description: "Euro Truck Simulator 2 is a simulation game developed and published by SCS Software. It is the first installment in the Euro Truck Simulator series.",
   },
   {
     id: 17,
@@ -134,6 +152,7 @@ const db = [
     year: 2025,
     price: 19.99,
     calabrites: true,
+    description: "inZOI is a simulation game developed and published by SCS Software. It is the first installment in the inZOI series.",
   },
   {
     id: 18,
@@ -142,6 +161,7 @@ const db = [
     year: 2023,
     price: 36.49,
     calabrites: false,
+    description: "Farming Simulator 25 is a simulation game developed and published by SCS Software. It is the first installment in the Farming Simulator series.",
   },
   {
     id: 19,
@@ -150,6 +170,7 @@ const db = [
     year: 2023,
     price: "Free",
     calabrites: false,
+    description: "Tom Clancy's Rainbow Six® Siege X is a simulation game developed and published by Ubisoft. It is the first installment in the Tom Clancy's Rainbow Six series.",
   },
   {
     id: 20,
@@ -158,6 +179,7 @@ const db = [
     year: 2023,
     price: "Free",
     calabrites: true,
+    description: "Once Human is a simulation game developed and published by Ubisoft. It is the first installment in the Once Human series.",
   },
 ];
 

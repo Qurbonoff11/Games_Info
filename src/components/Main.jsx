@@ -5,7 +5,7 @@ import Community from "../routes/Community";
 
 const Main = () => {
   return (
-    <main className="w-full min-h-screen bg-slate-950 py-28">
+    <main className="w-full min-h-screen bg-slate-950 py-16">
       <Routes>
         <Route path="/" element={<Store />} />
         <Route path="/libs" element={<Libs />} />
