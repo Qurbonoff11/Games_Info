@@ -28,7 +28,7 @@ const GamesCard = () => {
                     {item.price === "Free" ? "Free" : `$${item.price}`}
                   </span>
                   <button className="bg-blue-400 text-[14px] text-white font-bold uppercase py-[2px] px-4 rounded-lg cursor-pointer">
-                    Get
+                    Info
                   </button>
                 </div>
               </div>

@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 import SliderCard from "../components/SliderCard.jsx";
 import data from "../data/db.js";
-import GamesCard from "../components/gamesCard.jsx";
+import GamesCard from "../components/GamesCard.jsx";
 
 const { db } = data;
 
