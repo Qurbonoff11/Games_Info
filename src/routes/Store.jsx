@@ -1,12 +1,29 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 import SliderCard from "../components/SliderCard.jsx";
-import data from "../data/db.js";
 import GamesCard from "../components/GamesCard.jsx";
-
-const { db } = data;
+import { useEffect, useState } from "react";
 
 const Store = () => {
+  const [db, setDb] = useState([]);
+
+  const KEY = "ecc44a0015a645d8933c0cd1069cf024";
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const req = await fetch(
+          `https://api.rawg.io/api/games?key=${KEY}&page_size=40`
+        );
+        const data = await req.json();
+        setDb(data.results);
+      } catch (error) {
+        console.error("Failed to fetch games:", error);
+      }
+    };
+    fetchMovies();
+  }, []);
+
   return (
     <section className="w-full h-full bg-slate-950">
       <div className="container mx-auto">
@@ -33,18 +50,20 @@ const Store = () => {
             }}
             pagination={true}
             modules={[Autoplay, EffectCoverflow, Pagination]}
-            className="mySwiper w-2/4 h-[430px] rounded-2xl"
+            className="mySwiper w-full h-[600px] rounded-2xl"
           >
             {db
-              .filter((item) => item.calabrites)
-              .map((item) => (
-                <SwiperSlide key={item.id}>
-                  <SliderCard {...item} />
-                </SwiperSlide>
-              ))}
+              .filter((item) => item.rating >= 4.5)
+              .map((item) => {
+                return (
+                  <SwiperSlide key={item.id}>
+                    <SliderCard {...item} />
+                  </SwiperSlide>
+                );
+              })}
           </Swiper>
         </div>
-        <GamesCard />
+        <GamesCard db={db} />
       </div>
     </section>
   );

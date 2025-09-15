@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
-import Logo from "./Logo";
+import Logo from "../components/Logo.jsx";
 import data from "../data/db.js";
 import { RiAccountCircleLine } from "react-icons/ri";
+import SearchInp from "../components/SearchInp.jsx";
 
 const { navLinks } = data;
 
@@ -11,6 +12,7 @@ const Header = () => {
       <nav className="container mx-auto flex items-center justify-between py-4 gap-4">
         <div className="flex items-center justify-between flex-1">
           <Logo />
+          <SearchInp/>
           <ul className="flex items-center gap-4">
             {navLinks.map((link) => (
               <li key={link.id} className="relative">
