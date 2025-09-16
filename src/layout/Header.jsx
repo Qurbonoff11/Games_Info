@@ -3,16 +3,38 @@ import Logo from "../components/Logo.jsx";
 import data from "../data/db.js";
 import { RiAccountCircleLine } from "react-icons/ri";
 import SearchInp from "../components/SearchInp.jsx";
+import { useEffect, useState } from "react";
 
 const { navLinks } = data;
 
 const Header = () => {
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const API = "https://api.rawg.io/api/games?key=";
+  const KEY = "ecc44a0015a645d8933c0cd1069cf024";
+
+  useEffect(() => {
+    const fetchSearchResults = async () => {
+      try {
+        const req = await fetch(`${API}${KEY}&search=${search}&page_size=20`);
+        const data = await req.json();
+        setSearchResults(data.results);
+      } catch (error) {
+        console.error("Failed to fetch search results:", error);
+      }
+    };
+    if (search.length >= 3) {
+      fetchSearchResults();
+    }
+  }, [search]);
+
   return (
     <header className="w-full bg-slate-900 fixed top-0 z-[1000]">
-      <nav className="container mx-auto flex items-center justify-between py-4 gap-4">
+      <nav className="container mx-auto flex items-center justify-between py-4 gap-4 relative">
         <div className="flex items-center justify-between flex-1">
           <Logo />
-          <SearchInp/>
+          <SearchInp onSearch={setSearch} />
           <ul className="flex items-center gap-4">
             {navLinks.map((link) => (
               <li key={link.id} className="relative">
@@ -38,6 +60,13 @@ const Header = () => {
           </button>
         </div>
       </nav>
+      {
+        searchResults.length > 0 && (
+          <div className="absolute top-full left-0 w-full bg-slate-800 max-h-96 overflow-y-auto z-50">
+            
+          </div>
+        )
+      }
     </header>
   );
 };
