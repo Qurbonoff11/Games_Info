@@ -4,6 +4,7 @@ import data from "../data/db.js";
 import { RiAccountCircleLine } from "react-icons/ri";
 import SearchInp from "../components/SearchInp.jsx";
 import { useEffect, useState } from "react";
+import SearchModal from "../components/SearchModal.jsx";
 
 const { navLinks } = data;
 
@@ -17,11 +18,13 @@ const Header = () => {
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
-        const req = await fetch(`${API}${KEY}&search=${search}&page_size=20`);
+        const req = await fetch(`${API}${KEY}&search=${search}&page_size=10`);
         const data = await req.json();
         setSearchResults(data.results);
       } catch (error) {
         console.error("Failed to fetch search results:", error);
+      } finally {
+        setSearch("")
       }
     };
     if (search.length >= 3) {
@@ -60,13 +63,9 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      {
-        searchResults.length > 0 && (
-          <div className="absolute top-full left-0 w-full bg-slate-800 max-h-96 overflow-y-auto z-50">
-            
-          </div>
-        )
-      }
+      {search.length > 0 && (
+        <SearchModal searchResults={searchResults}/>
+      )}
     </header>
   );
 };
