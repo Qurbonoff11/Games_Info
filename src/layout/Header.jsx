@@ -11,6 +11,7 @@ const { navLinks } = data;
 const Header = () => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   const API = "https://api.rawg.io/api/games?key=";
   const KEY = "ecc44a0015a645d8933c0cd1069cf024";
@@ -18,13 +19,13 @@ const Header = () => {
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
-        const req = await fetch(`${API}${KEY}&search=${search}&page_size=10`);
+        const req = await fetch(`${API}${KEY}&search=${search}&page_size=15`);
         const data = await req.json();
         setSearchResults(data.results);
       } catch (error) {
         console.error("Failed to fetch search results:", error);
       } finally {
-        setSearch("")
+        setLoader(false);
       }
     };
     if (search.length >= 3) {
@@ -37,7 +38,7 @@ const Header = () => {
       <nav className="container mx-auto flex items-center justify-between py-4 gap-4 relative">
         <div className="flex items-center justify-between flex-1">
           <Logo />
-          <SearchInp onSearch={setSearch} />
+          <SearchInp search={search} onSearch={setSearch} />
           <ul className="flex items-center gap-4">
             {navLinks.map((link) => (
               <li key={link.id} className="relative">
@@ -64,7 +65,7 @@ const Header = () => {
         </div>
       </nav>
       {search.length > 0 && (
-        <SearchModal searchResults={searchResults}/>
+        <SearchModal loader={loader} searchResults={searchResults} />
       )}
     </header>
   );
