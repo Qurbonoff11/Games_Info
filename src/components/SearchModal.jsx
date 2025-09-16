@@ -1,4 +1,5 @@
 import { TrophySpin } from "react-loading-indicators";
+import noResultsImg from "../assets/img/not-found.png";
 
 const SearchModal = ({ searchResults, loader }) => {
   return (
@@ -7,6 +8,10 @@ const SearchModal = ({ searchResults, loader }) => {
         {loader ? (
           <div className="w-full h-full flex justify-center items-center col-span-5">
             <TrophySpin color="#0090ff" size="large" />
+          </div>
+        ) : searchResults.length == 0 ? (
+          <div className="w-full h-full flex flex-col justify-center items-center col-span-5">
+            <img className="w-1/6" src={noResultsImg} alt="Not found" />
           </div>
         ) : (
           searchResults.map((game) => {
